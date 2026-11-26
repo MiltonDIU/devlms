@@ -1,0 +1,1216 @@
+#region-main {
+    .activity-navigation {
+        &.container-fluid {
+            padding: 0;
+        }
+        .row {
+            .col-md-4 {
+                padding: 0;
+                margin-bottom: map-get($spacerspx, '4');
+                @include media-breakpoint-down(sm) {
+                    &:nth-child(2) {
+                        order: -1;
+                    }
+                    * {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .mdl-align {
+            form {
+                margin: 0;
+            }
+        }
+    }
+}
+
+#page-course-view-topics,
+.single-section-page {
+    .course-content ul.topics li.section,
+    .course-content ul.weeks li.section ,
+    .course-content ul.remuiformat li.section {
+        padding: map-get($spacerspx, '6');
+        background-color: $white;
+        border: 1px solid $light-border;
+        border-radius: $card-border-radius;
+        position: relative;
+
+        &:not(:last-of-type) {
+            margin-bottom: map-get($spacerspx, '6');
+        }
+
+        .activity {
+            padding: 0;
+            border-top: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: map-get($spacerspx, '4');
+            }
+
+            .activity-item {
+                border: 1px solid $light-border;
+                border-radius: 16px;
+                padding: map-get($spacerspx, '6');
+                .activity-instance {
+                    .activityiconcontainer {
+                        border-radius: $activity-iconcontainer-rad;
+                    }
+                }
+                .inplaceeditable .quickeditlink {
+                    margin: 0.05rem 0 0.2rem 0.5rem;
+                }
+            }
+        }
+
+        .activity.subsection {
+
+            .activity-item.activityinline {
+                padding: 0;
+                border: 0;
+            }
+
+
+            & > .activity-item.focus-control {
+                padding: 0;
+                border: 0;
+            }
+        }
+    }
+    .collapse-all-menu{
+        position: absolute;
+        right: 56px;
+        z-index: 1;
+        margin-right: 10px;
+    }
+    &.editing {
+        .course-content ul.topics li.section,
+        .course-content ul.weeks li.section {
+            .collapse-all-menu{
+                position: absolute;
+                right: 56px + 36px;
+            }
+        }
+    }
+}
+
+.single-section-page {
+    .course-content ul.topics li.section,
+    .course-content ul.weeks li.section{
+        border-radius: 1rem;
+    }
+    .activity.subsection {
+        .activity-item.activityinline {
+            padding: 0;
+            border: 0;
+        }
+    }
+
+    &:not(.editing) {
+        .activity {
+
+        }
+    }
+    & .page-context-header.coursenamewrapper{
+        .header-heading.coursepage.design-1{
+            font-weight: normal !important;
+            font-size: 16px !important;
+        }
+    }
+    .course-section-header .sectionname{
+        z-index: 4;
+    }
+}
+
+// .single-section-page {
+//     .activity-item.activityinline {
+//         padding: 24px;
+//     }
+// }
+
+.mform .form-inline .form-control,
+.mform .form-inline .custom-select {
+    max-width: 100%;
+}
+
+.tox .tox-editor-container .tox-editor-header {
+    z-index: 1;
+}
+
+.activity .activity-item .description .activity-dates .description-inner div {
+    line-height: 22px;
+}
+.activity{
+    &.indented {
+        .activity-item {
+            border: 0;
+            // margin-left: map-get($spacers, 3);
+            margin-left: map-get($spacerspx, '6');
+        }
+    }
+
+    // divider is only availble on m44
+    .divider .divider-content{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// It will apply on moodle44 or above
+#page-course-view-topics:not(.edw-m402):not(.edw-m403) {
+    &.editing {
+        .course-content ul.topics li.section,
+        .course-content ul.weeks li.section {
+            .activity{
+                &:not(:last-of-type) {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+
+    .topics .section{
+        padding: 0px !important;
+        background-color: transparent !important;
+        border: unset !important;
+        margin-bottom: 0px !important;
+
+        .section-item{
+            background-color: white !important;
+
+            .sectionname a {
+                z-index: 2;
+            }
+        }
+    }
+
+    &:not(.edw-m404) {
+        .course-content ul.weeks li.section,
+        .course-content ul.topics li.section {
+            .activity {
+                .activity-item:has(.section.delegated-section) {
+                    padding: 0;
+                    border: 0;
+                }
+            }
+        }
+    }
+}
+
+body:not(.edw-m402):not(.edw-m403) {
+    &#page-course-view-weeks,
+    &#page-course-view-topics {
+        .single-section {
+            // Revert main section's styles.
+            > ul > .course-section {
+                .section-item {
+                    padding: map-get($spacers, 3);
+                    border: 1px solid $border-color;
+                }
+            }
+        }
+    }
+}
+
+
+body.edw-m402,
+body.edw-m403 {
+    &#page-course-editsection {
+        .fdefaultcustom {
+			.form-check-inline {
+				justify-content: left;
+			}
+        }
+        &.dir-rtl {
+            .fdefaultcustom {
+                .form-check-inline {
+                    justify-content: right;
+                }
+            }
+        }
+    }
+}
+
+#page-course-view-weeks:not(.edw-m402):not(.edw-m403) {
+    .weeks .section{
+        .section-item{
+            .sectionname a {
+                z-index: 2;
+            }
+        }
+    }
+}
+
+// It will apply on moodle43 or above
+body:not(.edw-m402) {
+    .cm_action_menu.actions{
+        .dropdown-item.dropdown-toggle{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dropleft .dropdown-toggle::before{
+            order: 3;
+            transform: rotate(180deg);
+            font-size: 10px;
+        }
+    }
+    .activity-badges {
+        .badge-pill{
+            .edw-icon,.icon{
+                color: white;
+            }
+        }
+        .dropdown.show>.dropdown-toggle{
+            @extend .badge-secondary;
+        }
+    }
+}
+
+// It will apply on moodle44 or above
+body:not(.edw-m402):not(.edw-m403) {
+    .activity-badges,.sectionbadges {
+        .rounded-pill  .icon {
+            color: unset !important;
+        }
+    }
+    .btn.add-content{
+        border-radius: 50rem;
+        .icon{
+            color: #002a81 ;
+        }
+        &:hover,&:focus{
+            .icon{
+                color: white;
+            }
+        }
+    }
+    #fitem_id_summary_editor #id_summary_editor{
+        width: 100%;
+    }
+
+    .section .section-item{
+        .course-section-header{
+            word-break: break-all;
+        }
+    }
+    &.single-section-page .header-wrapper .header-actions-container {
+        display: flex;
+    }
+
+    #page-course-edit #id_courseformathdrcontainer #fitem_id_format{
+        .dropdown-toggle{
+            // border: 1px solid  #ced4da;
+            // font-weight: 400;
+            @extend .form-control;
+        }
+        .dropdown.show[data-form-controls="id_format"]{
+            .dropdown-menu{
+                max-width: 525px;
+                width: max-content;
+                @include media-breakpoint-down(sm) {
+                    max-width: 300px;
+                }
+            }
+
+        }
+    }
+}
+
+
+// It will apply on moodle4.2 and 4.3 only
+.edw-m403,.edw-m402{
+    .course-section-header{
+        .section_goto{
+            display: none;
+        }
+    }
+}
+
+.course-section,
+.course-section-header {
+    .section_goto .icon,
+    .section-summary-activities .icon {
+        color: $brand-primary
+    }
+
+    @include media-breakpoint-down(sm) {
+        .erf-float-right {
+            min-width: 150px;
+        }
+    }
+}
+
+.draggable {
+    .delegated-section {
+        .dragicon {
+            visibility: hidden;
+        }
+
+        .courseindex-section-title:hover {
+            .dragicon {
+                visibility: visible;
+            }
+        }
+
+        .courseindex-item.draggable:hover {
+            .dragicon {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+
+// .draggable:hover .dragicon {
+//     visibility: visible;
+//     cursor: move;
+// }
+
+// icons visibility issue on restriction on settings page
+.availability-item .availability-eye img {
+    min-width: 16px;
+}
+
+.availability-item .availability-delete img {
+    min-width: 14px;
+}
+
+.ai-course-summarise-controls button.btn.btn-outline-secondary span.ai-course-summarise-sparkles-icon.white {
+    width: 28px;
+
+}
+.course-summarise-response-controls .btn-outline-secondary:hover {
+    .icon {
+        color: $white;
+    }
+}
+.badge.bg-secondary{
+    background-color: $gray-400 !important;
+    mix-blend-mode: normal !important;
+    &:hover, &:focus{
+        background-color: darken($gray-400, 10%) !important;
+    }
+}
+
+// To fix subsection double border issue
+#page-course-view-topics {
+    .activity.subsection {
+        .section {
+            .section-item {
+                border: 1px solid $border-color;
+            }
+        }
+    }
+}
+
+//Fix of issue where the dropdown arrow for setting was not visible
+#page-course-management{
+    .card-body{
+       .category-list{
+          .list-group-item-action{
+             .clearfix{
+                .float-end {
+                   .action-menu{
+                      .action-menu-trigger{
+                         .dropdown{
+                            .dropdown-toggle::after {
+                               @extend .fa-solid;
+                               content: fa-content($fa-var-chevron-down) !important;
+                               margin-right: 0;
+                               margin-left: 4px;
+                               font-size: 9px;
+                               width: 9px;
+                               border: 0;
+                            }
+                         }
+                      }
+                   }
+                }
+             }
+          }
+       }
+    }
+}
+
+//Fix of Bulk Action Icon is not getting visible
+html:not([nighteyeplgn="active"]){
+    .header-actions-container {
+       .bulkEnable{
+          img.icon{
+             filter: invert(14%) sepia(88%) saturate(746%) hue-rotate(196deg) brightness(150%) contrast(96%);
+          }
+       }
+
+    }
+}
+
+ html[nighteyeplgn="active"]{
+    .header-actions-container {
+       .bulkEnable{
+          img.icon{
+             filter: invert(1);
+          }
+       }
+    }
+    #usernavigation {
+        .searchform-navbar {
+            [data-action="closesearch"] {
+                opacity: 1;
+                filter: contrast(0);
+            }
+        }
+    }
+    .pagelayout-course.edw-m503.editing {
+        .course-content-item-content{
+            .activity {
+                .activity-item {
+                    &.focus-control:hover {
+                        filter: brightness(1);
+                    } 
+                    .groupmode-information.v-parent-focus {
+                        filter: contrast(0);
+                    }
+                }
+            }
+        }
+    }
+    .edw-m503.hasstickyfooter {
+        #sticky-footer {
+            .sticky-footer-content-wrapper {
+                background-color: #000 !important;
+            }
+        }    
+    }
+}
+
+// AI summary buttons icon color change on hover
+.course-assist-response {
+    .course-assist-controls {
+        .btn-outline-secondary {
+            &:hover {
+                .icon {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+// Fix of dropdown position on Group mode for course activity
+.activity-actions {
+    .dropdown {
+        .dropdown-subpanel.dropend .dropdown-menu[data-bs-popper] {
+            right: 100%;
+            left: auto;
+        }
+    }
+}
+
+//Fix highlight text color issue in the course index page
+#course-index{
+   .courseindex-section-title{
+      .edw-title-icon-wrapper{
+         .badge-primary {
+            background-color: $ascent-bg-color !important;
+         }
+      }
+   }
+}
+
+//Fix of nav-item layout issue in the assignment submissions page
+#page-mod-assign-grading{
+   .tertiary-navigation{
+      label{
+         display: block;
+         padding-left: 1rem;
+      }
+   }
+}
+
+//Fix progress bar of subsection in general section is visible as too small for smaller screens
+@include media-breakpoint-down(sm){
+   body#page-course-view-remuiformat {
+      .list-view-general-activities {
+         .section.delegated-section{
+            .remui-list-content-border{
+               .right.side{
+                  width: 100%;
+               }
+            }
+         } 
+      }
+   }
+}
+
+// To fix dropdown positioning issue in mobile view on assignment submission page
+@include media-breakpoint-down(sm){
+   .pagelayout-incourse.path-mod {
+      .tertiary-navigation {
+         .navitem {
+            .dropdown.extrafilters {
+               .dropdown-menu.dropdown-menu-start {
+                  max-width: 180px;
+               }
+            }
+         }
+
+         .navitem {
+            .initials-selector.dropdown.comboboxsearch {
+               .initialsdropdown.dropdown-menu {
+                  max-width: 230px;
+               }
+            }
+         }
+      }
+   }
+}
+
+//Fix of dropdown hidden behind the user's name on course grader page
+#page-grade-report-grader-index {
+   .gradeparent {
+      table.gradereport-grader-table {
+         tr.userrow {
+            th.header.user:has(.dropdown.show) {
+               z-index: 3 !important;
+            }
+            .grade_type_value {
+                .moodle-actionmenu.grader{
+                    .dropdown-menu.show {
+                        z-index: 5;
+                    }
+                }
+            }
+         }
+      }
+   }
+}
+
+// To fix missing right arrow icon issue in group mode button in activity actions
+.format-remuiformat {  
+   .activity-actions {
+      .dropdown-menu-right {
+         .dropdown-subpanel.dropend {
+            .dropdown-toggle:has(.fa-circle-user)::before {
+             border: 0;
+             @extend .fa-solid;
+             content: fa-content($fa-var-chevron-left);
+             font-size: 9px;
+             margin-left: 0;
+             margin-right: 4px;
+             width: 9px;
+            }
+         }
+      }
+   }
+}
+
+// Course 'add section' button.
+body.edw-m501,
+body.edw-m502,
+body.edw-m503 {
+    #course-addsection {
+        .btn.btn-add-content {
+            @include border-radius($activity-border-radius);
+            border: $divider-width dashed $border-color;
+            color: $primary;
+            font-size: $font-size-sm;
+            font-weight: bold;
+            &:hover,
+            &:focus {
+                background-color: $primary-light-background;
+                border: $divider-width solid $primary;
+                color: $primary;
+            }
+        }
+    }  
+}
+
+#page-course-edit.edw-m501, 
+#page-course-edit.edw-m502 {
+    #id_courseformathdrcontainer {
+        #fitem_id_format,
+        #fitem_id_hiddensections {
+            .form-select.dropdown-toggle {
+                background-image: none !important;
+                padding-right: 10px !important;
+            }
+        }
+    }
+}
+
+#page-admin-setting-aiplacement {
+    #container-admin-toggle-courseassist,
+    #container-admin-toggle-editor {
+        .form-check.form-switch {
+            position: relative;
+            z-index: 1;
+            display: block;
+            min-height: 1.571rem;
+            print-color-adjust: exact;
+            padding-left: 2.45rem;
+        }
+    }
+}
+
+
+.header-extras-container .activity-dates {
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem 1.5rem;
+}
+
+body.edw-m500,
+body.edw-m501 {
+    .drawer.drawer-left#theme_remui-drawers-courseindex .drawerheader {
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        
+        .btn.drawertoggle {
+            margin-right: 0;
+        }
+    }
+}
+
+.pagelayout-course.editing {
+    .bulkEnable {
+        color: #5CA3FF !important;
+
+        .icon {
+            color: #5CA3FF !important;
+        }
+    }
+}
+
+.single-section-page .course-content .section-list .section,
+.section-list .section .section-item {
+    border-radius: $card-border-radius !important;
+}
+
+body#page-course-view-remuiformat {
+    .card-section-rightnav, 
+    .card-section-leftnav {
+        background-color: transparent;
+    }
+    
+}
+
+body.edw-m503 {
+    .activity.subsection {
+        .section {
+            --bs-border-radius: 1rem;
+        }
+    }
+}
+
+.edw-m503 {
+    #id_courseformathdrcontainer {
+        .form-select::after {
+            display: none;
+        }
+    }
+}
+
+// Moodle 5.3+: the collapse button moved to the top-level content template.
+// Hide the old per-section duplicate so only the top-level button is shown.
+.path-course.path-course-view.edw-m503 {
+    .section-list .section .section-item .course-section-header .collapse-all-menu {
+        display: none !important;
+    }
+}
+
+.edw-m503 {
+    @include media-breakpoint-down(sm) {
+        &#page-mod-feedback-view {
+            .container {
+                .container-fluid.tertiary-navigation {
+                    padding: 0px;
+                    div:first-child {
+                        gap: 20px;
+                        .navitem a {
+                            flex: none;
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        &.page-mycourses,
+        &.pagelayout-mydashboard { 
+            .block_myoverview {
+                .block-header-wrapper div {
+                    width: 100%;
+                    justify-content: flex-end;
+                }
+            } 
+        }
+    }
+    &#page-mod-forum-view {
+        table.discussion-list tbody tr.discussion:hover th.topic a {
+            text-decoration: underline !important;
+        }
+    }
+    &.hasstickyfooter {
+        #theme_remui-drawers-courseindex,
+        #theme_remui-drawers-blocks.drawer-right {
+            height: calc(100vh - 67px - calc(max(80px, calc(1rem * 3))));
+        }
+    }
+    .sticky-footer-content-wrapper {
+        .sticky-footer-content {
+            .course-linear-navigation-footer-content {
+                @include media-breakpoint-down(sm) {
+                    #prev-activity-link,
+                    #next-activity-link {
+                        padding: 12px 10px !important;
+                        .edw-icon {
+                            display: none;
+                        }
+                    }
+                }
+
+                #prev-activity-link {
+                    padding: 8px 16px 8px 6px;
+                }
+                #next-activity-link {
+                    padding: 8px 6px 8px 16px;
+                }
+                #prev-activity-link,
+                #next-activity-link {
+                    font-size: 16px !important;
+                    color: $button-secondary-color-text;
+                    border-color: $button-secondary-border-color;
+                    background: $button-secondary-color-background;
+                    &:hover {
+                        color: $button-primary-color-text;
+                        border-color: $button-primary-border-color;
+                        --bs-btn-active-bg: $button-primary-color-background;
+                        background: $button-primary-color-background;
+                        span {
+                            color: $button-primary-color-text;
+                        }
+                    }
+                    .edw-icon {
+                        font-size: 24px;
+                        color: $button-secondary-color-text;
+                    }
+                }
+            }
+            @include media-breakpoint-down(sm) {
+                .course-linear-navigation-footer-content {
+                    #prev-activity-link {
+                        padding: 8px 10px 8px 0px;
+                        font-size: 12px !important;                                
+    
+                    }
+                    [data-for="course-linear-navigation-footer"] {
+                        gap: 0px !important;
+                        justify-content: space-between;
+                        width: 100%;
+                        div:nth-child(2){
+                            display: none;
+                        }
+                        .course-linear-navigation-completion {
+                            margin-left: auto;
+                            button {
+                                font-size: 12px !important;
+                            }
+                        }
+                        #next-activity-link {
+                            padding: 8px 0px 8px 10px;
+                            font-size: 12px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.pagelayout-incourse {
+        @include media-breakpoint-down(sm) {
+            #page-header {
+                .page-context-header {
+                    display: flex !important;
+                    flex-direction: row;
+                    flex-wrap: nowrap !important;
+                }
+            }
+        }
+        #sticky-footer {
+            height: 68px;
+            @include media-breakpoint-down(sm) {
+                height: 60px;
+            }
+            #bulkactionsui-container {
+                ul[data-for="bulkactions"] {
+                    margin-left: 16px;
+                }
+            }
+            [data-for="bulkactions"].btn-toolbar,
+            [data-for="bulkactions"].actions  {
+                gap: 13px;
+                button {
+                    @extend .btn-secondary;
+                    display: flex !important;
+                    flex-direction: row !important;
+                    padding-top: 8px !important;
+                    padding-bottom: 8px !important;
+                    span {
+                        padding: 0px !important;
+                    }
+                    &.text-danger{
+                        border-color: #B60011 !important;
+                        span,
+                        span i {
+                            color: #B60011 !important;
+                        }
+                    }
+                }
+                @include media-breakpoint-down(sm) {
+                    button  {
+                        i {
+                            margin: 0px !important;
+                        }
+                        span:nth-child(2) {
+                            display: none;
+                        }
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    button {
+                        padding: 8px !important;
+                    }
+                    gap: 8px;
+                }
+            }
+            .sticky-footer-content-wrapper {
+                .sticky-footer-content {
+                    div label {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .form-select {
+                            padding: 8px 20px;
+                        }
+                    }
+                    [data-region="quick-grading-save"] div{
+                        display: flex;
+                    }
+    
+                }
+            }
+        }
+        .que {
+            display: flex;
+            gap: 1rem;
+            .content {
+                margin: 0px;
+                flex-grow: 1;
+            }
+        }
+    }
+    &.path-course.pagelayout-course {
+        .course-content {
+            .section-collapsemenu.aabtn:has(.collapseall):has(.expandall) {
+                background: transparent;
+                border-radius: 4px;
+                border: 1px solid #465062;
+                padding: 4px 10px;
+            }
+            .section-collapsemenu.aabtn:focus {
+                box-shadow: unset;
+            }
+        }
+        .modal-dialog {
+            .modal-body .imagedetails {
+                .form-check {
+                    padding-left: 0px !important;
+                    .form-check-input {
+                        margin-left: 0px !important;
+                    }
+                }
+                [data-region="customsize"] > div:first-child > div {
+                    width: 47%;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {            
+        &#page-course-view-topics {
+            .course-content {
+                .activity .activity-item {
+                    padding: 16px !important;
+                    .activityiconcontainer {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width : 500px) {
+        &#page-question-edit .questionbankwindow,
+        &#page-course-view-participants {
+            div[data-filterregion="actions"] button:first-child{
+                padding: 0px;
+                flex: auto;
+                flex-wrap: balance;
+                flex-direction: row;
+                i {
+                    margin-right: 0px;
+                }
+                span {
+                    padding-left: 0px !important;
+                }
+            }
+            div[data-filterregion="actions"] {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                > button {
+                    padding: 10px;
+                    flex: 0 1 calc(50% - 20px);
+                    margin: 0px !important;
+                }
+            }
+        }
+    }
+    #usernavigation {
+        li[data-key="recentcourses"] {
+            .dropdown-menu.show {
+                max-width: 388px;
+                div.text_to_html {
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+        #user-action-menu {
+            max-width: 20rem;
+            #carousel-item-main {
+                a.dropdown-item{
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    .edw-icon {
+                        margin-right: 5px;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+    .navbar.fixed-top {
+        .sub-nav {
+            .primary-navigation {
+                .navbar-nav {
+                    li.dropdownmoremenu {
+                        .dropdown-menu-start.show {
+                            max-width: 190px;
+                            li.nav-item a{
+                                display: block;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &#page-question-bank-deletequestion-delete {
+        #modal-content {
+            border: 1px solid #edf1f6;
+        }
+    }
+   
+}
+
+.edw-m501,
+.edw-m502,
+.edw-m503 {
+    .modchooser {
+    .modal-body {
+        min-height: unset !important;
+        .carousel-inner {
+            max-height: 70vh;
+            @include media-breakpoint-down(md) {
+                .carousel-item {
+                    .nav-pills.modchoosernav {
+                        .nav-item.nav-link {
+                            text-align: left;
+                        }
+                    }
+                    .modchoosercontent  {
+                        .optionscontainer {
+                            .option {
+                                padding: 5px 7px;
+                            }
+                            .option.selected {
+                                background-color: #E5EDFE;
+                            }
+                        }
+                    }
+                }
+            }
+            .modchoosercontent  {
+                .optionscontainer {
+                    .option.selected {
+                        background-color: #E5EDFE;
+                    }
+                }
+            }
+            .activitychooser-option-details {
+                gap: 18px;
+                display: flex;
+                flex-direction: column;
+                .modchooser-detail {
+                    .modchoosernav {
+                        background: transparent;
+                        border: 1px solid #EBF0F9;
+                        padding: 14px;
+                        border-radius: 8px;
+                        button[data-action="chooser-display-category"] {
+                            padding: 12px 22px;
+                            border: none !important;
+                            &:hover {
+                                background-color: #E5EDFE;
+                            }
+                        }
+                    }
+    
+                }
+                .modchooser-detail:last-child {
+                    display: flex;
+                    border: 1px solid #EBF0F9;
+                    border-radius: 8px;
+                    padding: 8px 14px;
+                    justify-content: space-between;
+                    .modchooser-detail-value {
+                        background: #EBF0F9;
+                        margin-top: 0px !important;
+                        padding: 1px 16px;
+                        border-radius: 33px;
+                    }
+                }
+            }
+            .carousel-item:nth-child(2){
+                height: 640px;
+                width: 100%;
+                .optionsummary {
+                    display: flex;
+                    max-height: 65vh;
+                    border: 1px solid $modal-content-border-color;
+                    @include border-radius($modal-content-border-radius);
+                    width: 100%;
+                    overflow: hidden;
+                    padding-block: 1rem;
+                    @include media-breakpoint-up(md) {
+                        [data-region="chooser-option-summary-content-container"] {
+                            > .d-flex.flex-column.flex-md-row-reverse {
+                                justify-content: space-between !important;
+
+                                > .flex-grow-1 {
+                                    padding: 0 !important;
+                                    width: 55%;
+                                }
+                            }
+                        }
+                    }
+                    [data-region="chooser-option-summary-content-container"] {
+                        padding-inline: 16px;
+                        width: 100%;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                    }
+                }
+            }
+        } 
+    }
+    .modal-header {
+        h5 {
+            font-weight: 700;
+        }
+    }
+    .modal-footer {
+        height: 80px;
+        [data-region="chooser-option-summary-actions-container"]:has(> [data-region="active-footer-container"].d-none) {
+            justify-content: flex-end !important;
+            gap: 10px;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .modal-footer {
+            [data-region="chooser-option-summary-actions-container"] > div:not(:first-child) {
+                flex-direction: row;
+            }
+        }
+    }
+    }
+}
+.edw-m502,
+.edw-m503 {
+    @media screen and (max-width: 485px) {
+        &#page-backup-backup {
+            div[role="main"] {
+                padding: 16px !important;
+
+                .unresponsive.mform {
+                    padding: 0;
+
+                    #fgroup_id_buttonar {
+                        div.felement:has(.inner-reverse) {
+                            padding: 0;
+
+                            .inner-reverse {
+                                gap: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.path-mod.hasstickyfooter {
+            #sticky-footer {
+                .sticky-footer-content {
+                    padding: 5px !important;
+                    justify-content: center !important;
+    
+                    .fitem[data-groupname="buttonar"] {
+                        margin: 0 !important;
+    
+                        span[data-fieldtype="group"] > div.flex-wrap {
+                            flex-wrap: nowrap !important;
+    
+                            input.btn {
+                                font-size: 12px !important;
+                                padding: 7px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+body#page-course-view-remuiformat {
+    #card-container.remui-format-card .activity .remui-completion-container [data-region="completionrequirements"] .completion-dropdown {
+        .dropdown-menu.dropdown-menu-end {
+            inset: unset !important;
+            top: 0px !important;
+            left: 0px !important;
+            transform: translate3d(0px, 37.6px, 0px) !important;
+        }
+    }
+}

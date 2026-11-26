@@ -1,0 +1,19 @@
+{
+    "name": "edwiserpagebuilder",
+    "version": "4.0.0",
+    "description": "Edwiser Page Builder.",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass --watch ./scss/edw_editor.scss ./styles/edw_editor.css"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-cli": "^2.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^6.0.1",
+        "sass": "^1.77.0"
+    }
+}
